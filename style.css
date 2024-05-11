@@ -1,0 +1,56 @@
+body 
+{
+    margin: 0;
+    padding: 0;
+    background-color: #A8A8A9;
+    color: #333;
+    font: 100% / normal sans-serif;
+    justify-content: center;
+}
+
+main 
+{
+    margin: 0 auto;
+    padding: 2rem 0;
+    width: 90%;
+    max-width: 60rem;
+}
+       
+h1 
+{
+    text-align: center;
+    font-size: 50px;
+    color: #453C38;
+    padding-top: 40px;
+}
+
+.notification p 
+{
+    margin-bottom: 0;
+    font-size: 18px;
+}
+
+.notification 
+{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 75%;
+    max-width: 1000px;
+    margin: 10px auto;
+    display: block;
+}
+
+.notification p 
+{
+    margin-bottom: 0;
+}
+
+.notification-container 
+{
+    text-align: center;
+    margin-top: 20px;    
+}
