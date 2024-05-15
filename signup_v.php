@@ -5,7 +5,7 @@
         <title>
             Sign Up Form
         </title>
-        <link href="<?php echo base_url('assets/css/swe_css/login.css'); ?>" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="<?php echo base_url('assets/login.css'); ?>">
 
     </head>
 
@@ -24,7 +24,7 @@
                 
                 <div class="account-type">
                     <label for="account-type">Account Type:</label>
-                    <input type="radio" id="staff" name="account-type" value="staff"> Staff
+                    <input type="radio" id="admin" name="account-type" value="admin"> Admin
                     <input type="radio" id="customer" name="account-type" value="customer" checked> Customer
                 </div>
             </form>
@@ -35,7 +35,7 @@
                 </div>
             </form>
 
-            <p>Already a member? <a href="<?php echo base_url('swe/reservation/login'); ?>">Sign in</a></p>
+            <p>Already a member? <a href="<?php echo base_url('login'); ?>">Sign in</a></p>
         </div>
     </body>
 </html>
