@@ -5,7 +5,8 @@
         <title>
             Login Page
         </title>
-        <link href="<?php echo base_url('assets/css/swe_css/login.css'); ?>" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="<?php echo base_url('assets/login.css'); ?>" type="text/css">
+
 
     </head>
 
@@ -27,8 +28,8 @@
             </form>
 
             <p>
-                Don't have an account? <a href="<?php echo base_url('swe/reservation/signup'); ?>">Sign Up</a>
+                Don't have an account? <a href="<?php echo base_url('login/signup'); ?>">Sign Up</a>
             </p>
         </div>
-    </body>
+    </body>
 </html>
