@@ -2,34 +2,30 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>
-            Login Page
-        </title>
-        <link rel="stylesheet" href="<?php echo base_url('assets/login.css'); ?>" type="text/css">
-
-
+        <title>Login</title>
+        <link href="<?php echo base_url('assets/css/swe_css/login.css'); ?>" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     </head>
 
     <body>
-        <div class ="container">
-            <h1>Login</h1>
+    <div class="container">
+        <div class="wrapper">
+            <div class="title"><span>Login Form</span></div>
             <form action="#">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password">
-
-            </form>
-
-            <form action="#">
-                <div class="button-container">
-                    <input type="submit" value="Login" class="button">
+                <div class="row">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Email" required>
                 </div>
+                <div class="row">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Password" required>
+                </div>
+                <div class="row button">
+                    <input type="submit" value="Login">
+                </div>
+                <div class="signup-link">Not a member? <a href="<?php echo base_url('swe/login/signup'); ?>">Signup now</a></div>
             </form>
-
-            <p>
-                Don't have an account? <a href="<?php echo base_url('login/signup'); ?>">Sign Up</a>
-            </p>
         </div>
-    </body>
+    </div>
+    </body>
 </html>

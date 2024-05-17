@@ -26,7 +26,7 @@ class Login_m extends CI_Model{
 
         return $error_msg;
     }
-    
+
     function authenticate_user($name, $password){
         // $sql = "SELECT * FROM login WHERE name =". $this->db->escape($name). "AND password = ". $this->db->escape($password);
 
@@ -50,7 +50,7 @@ class Login_m extends CI_Model{
             return null;
         }
     }
-    
+
     function login_user($name,$password){
         $login_result = $this->validate_data($name,$password);
 
