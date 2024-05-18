@@ -13,40 +13,40 @@
             <form action="<?php echo site_url('swe/login/signup'); ?>" class="form" method="POST">
                 <div class="input-box">
                     <label>Full Name</label>
-                    <input type="text" placeholder="Enter full name" required />
+                    <input type="text" name="name" placeholder="Enter full name" required />
                 </div>
                 <div class="input-box">
                     <label>Email Address</label>
-                    <input type="text" placeholder="Enter email address" required />
+                    <input type="email" name="email" placeholder="Enter email address" required />
                 </div>
                 <div class="column">
                     <div class="input-box">
                         <label>Password</label>
-                        <input type="text" placeholder="Enter password" required />
+                        <input type="password" name="password" placeholder="Enter password" required />
                     </div>
                     <div class="input-box">
                         <label>Confirm Password</label>
-                        <input type="text" placeholder="Confirm your password" required />
+                        <input type="password" name="confirm_password" placeholder="Confirm your password" required />
                     </div>
                 </div>
                 <div class="gender-box">
                     <h3>Role</h3>
                     <div class="gender-option">
                         <div class="gender">
-                            <input type="radio" id="check-customer" name="gender" checked />
-                            <label for="check-male">Customer</label>
+                            <input type="radio" id="check-customer" name="role" value="customer" checked/>
+                            <label for="check-customer">Customer</label>
                         </div>
                         <div class="gender">
-                            <input type="radio" id="check-admin" name="gender" />
-                            <label for="check-female">Admin</label>
+                            <input type="radio" id="check-admin" name="role" value="admin" />
+                            <label for="check-admin">Admin</label>
                         </div>
                     </div>
                 </div>
-                <div id="admin-input" style="display: none;" class="input-box">
+                <div id="admin-input" class="input-box" style="display: none;">
                     <label for="admin-input-field">Admin Input:</label>
-                    <input type="text" id="admin-input-field" name="admin-input-field" placeholder="Enter admin password" required/>
+                    <input type="text" id="admin-input-field" name="admin-input-field" placeholder="Enter admin password"/>
                 </div>
-                <button>Submit</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </body>
@@ -64,8 +64,10 @@
         function toggleAdminInput() {
             if (adminRadio.checked) {
                 adminInput.style.display = 'block'; // Show the input column if admin is selected
+                adminInputField.setAttribute('required', 'required');
             } else {
                 adminInput.style.display = 'none'; // Hide the input column if customer is selected
+                adminInputField.removeAttribute('required');
             }
         }
     </script>
