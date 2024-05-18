@@ -51,12 +51,25 @@ body {
 }
 
 table {
-    width: 90%;
-    margin:70px;
+    width: 92%;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 td {
     width: auto; 
     padding: 10px; 
+    
+}
+
+h1 {
+    margin-left: 100px;
+    margin-top: 30px;
+}
+
+.CalendarPerWeek {
+    display: flex;
+    justify-content: center;
     
 }
