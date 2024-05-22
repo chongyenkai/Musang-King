@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="author" content="Musang King Restaurant" />
+    <meta name="Manage Booking" content="This page is to manage your booking" />
+    <title>Manage Booking</title>
+    <link rel="icon" href="/musang-king-logo.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="/main.css" type="text/css" />
+    <script src="/main.js" defer></script>
+    <link rel="stylesheet" href="/YourReservations/ManageBooking.css" type="text/css" />
+    <script src="/YourReservations/ManageBooking.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <a href="#" id="profile-icon">
+          <img src="/profile-logo.png" alt="Profile Logo" />
+        </a>
+        <div class="RestaurantTitle">
+          <a href="/Home/Home.html">Musang King Restaurant</a>
+        </div>
+        <ul>
+          <li><a href="/Home/Home.html">Home</a></li>
+          <li><a href="#">Book Now</a></li>
+          <li><a href="/YourReservations/YourReservation.html">Your Reservations</a></li>
+          <li><a href="/Schedule/Schedule.html">Schedule</a></li>
+          <li><a href="#">Notification</a></li>
+        </ul>
+      </div>
+    </header>
+    <main>
+      <div class="manage-booking-container">
+        <h2>Manage Booking</h2>
+        <form id="manage-booking-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          <label for="reservation-date-time">Reservation Date and Time:</label>
+          <input type="datetime-local" id="reservation-date-time" name="reservation-date-time" required>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          <label for="phone-number">Phone Number:</label>
+          <input type="tel" id="phone-number" name="phone-number" required>
+          <label for="number-of-guests">Number of Guests:</label>
+          <input type="number" id="number-of-guests" name="number-of-guests" required>
+          <label for="table-reserved">Table Reserved:</label>
+          <input type="text" id="table-reserved" name="table-reserved" required>
+          <div class="form-actions">
+            <button type="button" class="cancel-btn" onclick="confirmCancel()">Cancel Booking</button>
+            <button type="button" class="save-btn" onclick="confirmEdit()">Edit & Save</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <hr>
+    <footer>
+      <p style="font-size: 15px">Copyright &copy; 2024 Musang King Restaurant IT Department</p>
+    </footer>
+
+    <div id="confirm-edit-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('confirm-edit-popup')">&times;</span>
+            <p>Are you sure you want to edit this reservation?</p>
+            <button class="ok-btn" onclick="editBookingConfirmed()">Confirm</button>
+        </div>
+    </div>
+
+    <div id="confirm-cancel-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup('confirm-cancel-popup')">&times;</span>
+            <p>Are you sure you want to cancel this reservation?</p>
+            <button class="ok-btn" onclick="cancelBookingConfirmed()">Confirm</button>
+        </div>
+    </div>
+
+    <div id="profile-popup" class="popup">
+      <div class="popup-content">
+        <span class="close-btn">&times;</span>
+        <h2>Profile</h2>
+        <a href="#" class="Login-button">Login</a>
+      </div>
+    </div>
+  </body>
+</html>

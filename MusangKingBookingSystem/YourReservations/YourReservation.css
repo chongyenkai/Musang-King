@@ -1,0 +1,42 @@
+.reservation-container {
+  padding: 20px;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.filter-container label,
+.filter-container input {
+  margin-right: 10px;
+}
+
+.reservation-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.reservation-table th,
+.reservation-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.reservation-table th {
+  background-color: #8fd14f;
+  color: white;
+}
+
+.edit-btn {
+  background-color: #8fd14f;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.edit-btn:hover {
+  background-color: #45a049;
+}

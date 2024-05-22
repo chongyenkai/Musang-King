@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="Confirm Reservation"
+      content="This page is to confirm reservation"
+    />
+    <title>Please Confirm Your Booking</title>
+    <link rel="icon" href="/musang-king-logo.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="ConfirmReservation.css" />
+  </head>
+  <body>
+    <header>Please Confirm Your Booking</header>
+
+    <div class="container">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <span id="name"><?php echo $name; ?></span>
+      </div>
+      <div class="form-group">
+        <label for="reservation-datetime">Reservation Date and Time:</label>
+        <span id="reservation-datetime"
+          ><?php echo $reservation_datetime; ?></span
+        >
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <span id="email"><?php echo $email; ?></span>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <span id="phone"><?php echo $phone; ?></span>
+      </div>
+      <div class="form-group">
+        <label for="guests">Number of Guests:</label>
+        <span id="guests"><?php echo $number_of_guests; ?></span>
+      </div>
+      <div class="form-group">
+        <label for="table">Table Reserved:</label>
+        <span id="table"><?php echo $table_reserved; ?></span>
+      </div>
+      <div class="form-group">
+        <button onclick="confirmBooking()" class="button">
+          Confirm Booking
+        </button>
+      </div>
+    </div>
+
+    <script>
+      function confirmBooking() {
+        // add code to submit data to database
+        alert("Booking confirmed!");
+      }
+    </script>
+
+    <hr />
+
+    <footer>
+      <p style="font-size: 15px">
+        Copyright &copy; 2024 Musang King Restaurant IT Department
+      </p>
+    </footer>
+  </body>
+</html>
