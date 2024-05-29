@@ -1,0 +1,133 @@
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#DAA520;
+    color: #fefefe;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo */
+.logo a{
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger .line {
+    width: 30px;
+    height: 3px;
+    background: #fefefe;
+    margin: 6px 0;
+}
+
+/* Navigation Menu */
+.nav-bar ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.nav-bar li {
+    margin: 0 10px;
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    color: #2F4F4F;
+    transition: color 0.2s;
+    border-radius : 40px;
+    font-size: 20px;
+    margin: 0 5px;
+    display: block;
+    padding: 8px 15px;
+    font-weight: bold;
+}
+
+.nav-bar ul li a:hover {
+    color: #98FB98;
+    background: #fefefe;
+}
+
+.nav-bar ul li a.active {
+    font-weight: bold;
+    color: #C19A6B;
+}
+
+/* Booking History */
+.containerbh {
+    max-width: 1050px;
+    margin: 0 auto;
+    background-color: #DCDCDC;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    margin-bottom: 45px;
+}
+
+.table-title {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 2px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+tr {
+    background-color: #ffffff; /* Ensures all rows have a white background */
+}
+
+.search {
+    float: right;
+    margin-bottom: 1em;
+}
+
+button {
+    background-color: white;
+    color: black;
+    padding: 5px 15px;
+    margin-left: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+
+.e {
+    background-color: white;
+    color: black;
+    border: 2px solid #04AA6D;
+}
+
+.e:hover {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.d {
+    background-color: white;
+    color: black;
+    border: 2px solid red;
+}
+
+.d:hover {
+    background-color: red;
+    color: white;
+}
