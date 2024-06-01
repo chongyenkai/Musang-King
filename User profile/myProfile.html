@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet'>
+    <link href="header.css" rel="stylesheet" type="text/css">
+    <link href="myProfile.css" rel="stylesheet" type="text/css">
+    <title>My Profile</title>
+
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+</head>
+<body>
+
+    <div id="header"></div>
+
+    <main>
+        <section class="profile-container">
+            <h1>My Profile</h1>
+            <div class="profile-details">
+                <div class="profile-item">
+                    <i class="fa fa-user-circle"></i>
+                    <span class="label">Name :</span>
+                    <span class="value">Jennifer Thew</span>
+                </div>
+                <div class="profile-item">
+                    <i class="fa fa-envelope"></i>
+                    <span class="label">Email Address :</span>
+                    <span class="value">jennifer@gmail.com</span>
+                </div>
+                <div class="profile-item">
+                    <i class="fa fa-phone"></i>
+                    <span class="label">Phone Number :</span>
+                    <span class="value">123-456-7890</span>
+                </div>
+                <div class="profile-item">
+                    <i class="fa fa-id-card"></i>
+                    <span class="label">IC Number :</span>
+                    <span class="value">012345-10-1234</span>
+                </div>
+                <div class="profile-item">
+                    <i class="fa fa-calendar"></i>
+                    <span class="label">Number of Reservations :</span>
+                    <span class="value">5</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        $(function(){
+            $("#header").load("header_v.html");
+        });
+    </script>
+</body>
+</html>

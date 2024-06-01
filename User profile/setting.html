@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="header.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet'>
+    <link href="setting.css" rel="stylesheet" type="text/css">
+    <title>Settings</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main>
+        <section class="settings-container">
+            <h1>Settings</h1>
+            <form class="settings-form">
+                <div class="form-card">
+                    <div class="form-item">
+                        <label for="notifications">Email Notifications :</label>
+                        <select id="notifications" name="notifications" style="margin-top: 20px;">
+                            <option value="all">All</option>
+                            <option value="confirmationEmail">Confirmation Emails</option>
+                            <option value="reminders">Reservations Reminders</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-card">
+                    <div class="form-item">
+                        <label for="password">New Password :</label>
+                        <input type="password" id="password" name="password" placeholder="Enter new password" style="margin-top: 20px;">
+                    </div>
+                    <div class="form-item">
+                        <label for="confirm-password">Confirm New Password :</label>
+                        <input type="password" id="confirm-password" name="confirmPassword" placeholder="Re-enter your new password" style="margin-top: 20px;">
+                    </div>
+                </div>
+                <div class="form-card form-item-submit">
+                    <button type="submit" class="save-button">Save Changes</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        $(function(){
+            $("#header").load("header_v.html");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600' rel='stylesheet'>
+    <link href="header.css" rel="stylesheet" type="text/css">
+    <link href="editProfile.css" rel="stylesheet" type="text/css">
+    <title>Edit Profile</title>
+
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+</head>
+<body>
+
+    <div id="header"></div>
+
+    <main>
+        <section class="profile-container">
+            <h1>Edit Profile</h1>
+            <form class="edit-profile-form">
+                <div class="form-item">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" value="Jennifer Thew">
+                </div>
+                <div class="form-item">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" value="jennifer@gmail.com">
+                </div>
+                <div class="form-item">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" value="123-456-7890">
+                </div>
+                <div class="form-item">
+                    <label for="ic">IC Number</label>
+                    <input type="text" id="ic" name="ic" value="012345-10-1234">
+                </div>
+                <div class="form-item-submit">
+                    <button type="submit">Save Changes</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        $(function(){
+            $("#header").load("header_v.html");
+        });
+    </script>
+</body>
+</html>
