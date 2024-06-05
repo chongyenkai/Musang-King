@@ -1,41 +1,331 @@
+/* Home page css */
 body {
     margin: 0;
-    background-color: #A8A8A9;
     color: #333;
     font: 100% / normal sans-serif;
 }
-    
-main {
-    margin: 0 auto;
-    padding: 2rem 0;
-    width: 90%;
-    max-width: 60rem;
-}
-    
-form {
+
+/* Reservation form page */
+*{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    padding: 2rem;
-    border-radius: 1rem;
-    background-color: #F4EFDB;
-    border: 4px solid #F4EFDB;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
-    
-.full-width {
-    grid-column: span 2;
+    outline: none;
+    font-family: sans-serif;
+  }
+  
+  body{
+    height: 100vh;
+    background: #e1edf9;
+  }
+  
+  .wrapper{
+    max-width: 750px;
+    width: 100%;
+    margin: 30px auto 0;
+    padding: 10px;
+  
+  }
+  
+  .wrapper .form_container{
+    background-color: #F4EFDB;;
+    padding: 30px;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+  }
+
+  .heading{
+    background: #015a80;
+    margin: -30px;
     text-align: center;
-}
-    
-header {
-    text-align: center;
-    font-size: 50px;
-    color: #453C38;
-    padding-top: 40px;
-}
-    
-.button:hover {
+    color: white;
+    font-size: 19px;
+    margin-bottom: 35px;
+    padding: 10px;
+  }
+
+  .wrapper .form_container .form_item{
+    margin-bottom: 25px;
+  }
+  
+  .form_wrap.fullname,
+  .form_wrap.select_box{
+    display: flex;
+  }
+  
+  .form_wrap.fullname .form_item,
+  .form_wrap.select_box .form_item{
+    width: 50%;
+  }
+  
+  .form_wrap.fullname .form_item:first-child,
+  .form_wrap.select_box .form_item:first-child{
+    margin-right: 4%;
+  }
+  
+  .wrapper .form_container .form_item label{
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form_item input[type="text"],
+  .form_item select{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #dadce0;
+    border-radius: 3px;
+  }
+  
+  .form_item input[type="text"]:focus{
+    border-color: #6271f0;
+  }
+  
+  .button{
+    background: #1598d4;
+    border: 1px solid #1598d4;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #fff;
+    margin-right: 50px;
+  }
+
+  .btn-left {
+    width: 100px;
+    margin-left: 520px;
+  }
+
+  .button:hover {
     background-color: #04AA6D;
     color: white;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+  }
+
+/* Table Selection */
+.table-image {
+    width: 120px;
+    height: 120px;
+}
+
+.row {
+    padding-right: 60px;
+}
+
+.round-image {
+    width: 300px;
+    height: 270px;
+}
+
+.square-image {
+    width: 400px;
+    height: 150px;
+}
+
+.table-image:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(15, 198, 15, 0.7);
+}
+
+.round-image:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(15, 198, 15, 0.7);
+}
+
+.square-image:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(15, 198, 15, 0.7);
+}
+
+.unavailable {
+  opacity: 0.5; /* Reduced opacity for grayed out effect */
+  pointer-events: none; /* Disable click events for grayed out tables */
+}
+
+/* Home */
+.food2{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  opacity: 0.8;
+}
+
+.cover-slides h1{
+	font-family: 'Rubik', sans-serif;
+	font-weight: 500;
+	font-size: 64px;
+	color: #fff;
+  padding-top: 100px;
+}
+
+.cover-slides p{
+  font-family: "Times New Roman", Times, serif;
+	font-size: 18px;
+	color: #fff;
+  margin-left: 0px;
+}
+
+.btn{
+	text-transform: uppercase;
+	padding: 19px 36px;
+}
+
+.btn{
+	display: inline-block;
+	font-weight: 600;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	border: 2px solid transparent;
+	padding: 12px 30px;
+	font-size: 16px;
+	line-height: 1.5;
+	border-radius: .1875rem;
+	transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.btn-outline-new-white {
+    color: #fff;
+    background-color: #3CB371;
+    background-image: none;
+    border-color: #3CB371;
+}
+
+.btn-outline-new-white:hover {
+    color: #ffffff;
+    background-color: #333333;
+    border-color: #333333;
+}
+
+/* Review booking */  
+.review-header {
+  text-align: center;            
+  font-size: 24px;               
+  font-family: 'Arial', sans-serif;
+  color: #333;                   
+  background-color: #A9A9A9;     
+  padding: 15px 0px;            
+  margin: 10px 0;               
+  margin-top: 25px;             
+  border-radius: 10px;          
+  border: 1px solid #ddd;  
+}
+
+.containers {
+  width: 80%;
+  margin: auto;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 5em;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.button_confirm {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.button_confirm:hover {
+  background-color: #218838;
+}
+
+/* Confirm booking */
+.confirm-image {
+  position: absolute;
+  margin-top: 25px;
+  left: 42%;
+  width: 18%;
+  height: 38%;
+  object-fit: fill;
+}
+
+.message {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 50px;
+}
+
+.relay {
+  text-align: center;
+  margin-top: 38px;
+  margin-right: 100px;
+}
+
+.imageBox {
+  display: grid;
+  height: 38%;
+}
+
+/* Schedule page */
+.header {
+  text-align: center;
+}
+
+.week-selector {
+  margin-bottom: 20px;
+}
+
+.week-selector label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.week-info {
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.schedule-table th,
+.schedule-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.schedule-table th {
+  background-color: #f2f2f2;
 }

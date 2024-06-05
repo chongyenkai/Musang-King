@@ -1,0 +1,241 @@
+/* table management */
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+    background-color: #DCDCDC;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    margin-bottom: 45px;
+}
+
+p {
+    text-align: center;
+    font-size: 50px;
+    padding-top: 40px;
+}
+
+.table-title {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 2px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+tr {
+    background-color: #ffffff; /* Ensures all rows have a white background */
+}
+
+.search {
+    float: right;
+    margin-bottom: 1em;
+}
+
+.editButton, .delButton {
+    background-color: white;
+    color: black;
+    padding: 5px 15px;
+    margin-left: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    text-decoration: none;
+}
+
+.editButton {
+background-color: white;
+color: black;
+border: 2px solid #04AA6D;
+}
+
+.editButton:hover {
+background-color: #04AA6D;
+color: white;
+}
+
+.delButton {
+background-color: white;
+color: black;
+border: 2px solid red;
+}
+
+.delButton:hover {
+background-color: red;
+color: white;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#DAA520;
+    color: #fefefe;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo */
+.logo a{
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger .line {
+    width: 30px;
+    height: 3px;
+    background: #fefefe;
+    margin: 6px 0;
+}
+
+/* Navigation Menu */
+.nav-bar ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.nav-bar li {
+    margin: 0 10px;
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    color: #2F4F4F;
+    transition: color 0.2s;
+    border-radius : 40px;
+    font-size: 20px;
+    margin: 0 5px;
+    display: block;
+    padding: 8px 15px;
+    font-weight: bold;
+}
+
+.nav-bar ul li a:hover {
+    color: #98FB98;
+    background: #fefefe;
+}
+
+.nav-bar ul li a.active {
+    font-weight: bold;
+    color: #C19A6B;
+}
+
+/* Edit form */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: sans-serif;
+  }
+  
+  body{
+    height: 100vh;
+    background: #e1edf9;
+  }
+  
+  .wrapper{
+    max-width: 750px;
+    width: 100%;
+    margin: 30px auto 0;
+    padding: 10px;
+  
+  }
+  
+  .wrapper .form_container{
+    background-color: #F4EFDB;;
+    padding: 30px;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+  }
+
+  .heading{
+    background: #015a80;
+    margin: -30px;
+    text-align: center;
+    color: white;
+    font-size: 19px;
+    margin-bottom: 35px;
+    padding: 10px;
+  }
+
+  .wrapper .form_container .form_item{
+    margin-bottom: 25px;
+  }
+  
+  .form_wrap.fullname,
+  .form_wrap.select_box{
+    display: flex;
+  }
+  
+  .form_wrap.fullname .form_item,
+  .form_wrap.select_box .form_item{
+    width: 50%;
+  }
+  
+  .form_wrap.fullname .form_item:first-child,
+  .form_wrap.select_box .form_item:first-child{
+    margin-right: 4%;
+  }
+  
+  .wrapper .form_container .form_item label{
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form_item input[type="text"],
+  .form_item select{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #dadce0;
+    border-radius: 3px;
+  }
+  
+  .form_item input[type="text"]:focus{
+    border-color: #6271f0;
+  }
+  
+  .button{
+    background: #1598d4;
+    border: 1px solid #1598d4;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #fff;
+    margin-right: 50px;
+  }
+
+  .btn-left {
+    width: 100px;
+    margin-left: 520px;
+  }
+
+  .button:hover {
+    background-color: #04AA6D;
+    color: white;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+  }

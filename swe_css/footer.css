@@ -1,0 +1,8 @@
+footer {
+    background-color: #e1edf9; /* Background color */
+    color: black; /* Text color */
+    padding: 1px; /* Padding around content */
+    padding-top: -10px;
+    text-align: left; /* Center align text */
+    position: flex; /* Make footer relative to its container */
+}
