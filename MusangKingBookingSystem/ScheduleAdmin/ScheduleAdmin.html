@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Musang King Restaurant" />
+    <meta name="description" content="This page contains the admin schedule of Musang King Restaurant"/>
+    <title>Admin Schedule</title>
+    <link rel="icon" href="/musang-king-logo.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="/main.css" type="text/css" />
+    <link rel="stylesheet" href="ScheduleAdmin.css" type="text/css" />
+    <script src="ScheduleAdmin.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <a href="#" id="profile-icon">
+                <img src="/profile-logo.png" alt="Profile Logo" />
+            </a>
+
+            <div class="RestaurantTitle">
+                <a href="/Home/Home.html">Musang King Restaurant</a>
+            </div>
+
+            <ul>
+                <li><a href="/Home/Home.html">Home</a></li>
+                <li><a href="#">Book Now</a></li>
+                <li><a href="/YourReservations/YourReservation.html">Your Reservations</a></li>
+                <li><a href="/Schedule/Schedule.html">Schedule</a></li>
+                <li><a href="#">Notification</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <h1>Admin Schedule</h1>
+
+    <form class="CalendarPerWeek">
+        <label for="week">Choose a week: </label>
+        <input type="week" id="week" name="week" />
+        <input type="submit" value="Submit" />
+    </form>
+
+    <table border="1">
+        <tr>
+            <td>Day\Time</td>
+            <td>10:00</td>
+            <td>11:00</td>
+            <td>12:00</td>
+            <td>13:00</td>
+            <td>14:00</td>
+            <td>15:00</td>
+            <td>16:00</td>
+            <td>17:00</td>
+            <td>18:00</td>
+            <td>19:00</td>
+            <td>20:00</td>
+            <td>21:00</td>
+        </tr>
+        <tr>
+            <td>Monday</td>
+            <td><a href="booking-details.html?day=Monday&time=10:00" id="count_Monday_1000">0</a></td>
+            <td><a href="booking-details.html?day=Monday&time=11:00" id="count_Monday_1100">0</a></td>
+            <td><a href="booking-details.html?day=Monday&time=12:00" id="count_Monday_1200">0</a></td>
+            <td><a href="booking-details.html?day=Monday&time=13:00" id="count_Monday_1300">0</a></td>
+            <td><a href="booking-details.html?day=Monday&time=14:00" id="count_Monday_1400">0</a></td>
+            <td><a href="booking-details.html?day=Monday&time=15:00" id="count_Monday_1500">0</a></td>
+            <td><a href="booking-details.html?day=Monday&time=16:00" id="count_Monday_1600">0</a></td>
+            <td><a href="booking-details.html?day=Monday&time=17:00" id="count_Monday_1700">0</a></td>
+            <td><a href="booking-details.html?day=Monday&time=18:00" id="count_Monday_1800">0</a></td>
+            <td><a href="booking-details.html?day=Monday&time=19:00" id="count_Monday_1900">0</a></td>
+            <td><a href="booking-details.html?day=Monday&time=20:00" id="count_Monday_2000">0</a></td>
+            <td><a href="booking-details.html?day=Monday&time=21:00" id="count_Monday_2100">0</a></td>
+        </tr>
+        <tr>
+            <td>Tuesday</td>
+            <td><a href="booking-details.html?day=Tuesday&time=10:00" id="count_Tuesday_1000">0</a></td>
+            <td><a href="booking-details.html?day=Tuesday&time=11:00" id="count_Tuesday_1100">0</a></td>
+            <td><a href="booking-details.html?day=Tuesday&time=12:00" id="count_Tuesday_1200">0</a></td>
+            <td><a href="booking-details.html?day=Tuesday&time=13:00" id="count_Tuesday_1300">0</a></td>
+            <td><a href="booking-details.html?day=Tuesday&time=14:00" id="count_Tuesday_1400">0</a></td>
+            <td><a href="booking-details.html?day=Tuesday&time=15:00" id="count_Tuesday_1500">0</a></td>
+            <td><a href="booking-details.html?day=Tuesday&time=16:00" id="count_Tuesday_1600">0</a></td>
+            <td><a href="booking-details.html?day=Tuesday&time=17:00" id="count_Tuesday_1700">0</a></td>
+            <td><a href="booking-details.html?day=Tuesday&time=18:00" id="count_Tuesday_1800">0</a></td>
+            <td><a href="booking-details.html?day=Tuesday&time=19:00" id="count_Tuesday_1900">0</a></td>
+            <td><a href="booking-details.html?day=Tuesday&time=20:00" id="count_Tuesday_2000">0</a></td>
+            <td><a href="booking-details.html?day=Tuesday&time=21:00" id="count_Tuesday_2100">0</a></td>
+        </tr>
+        <tr>
+            <td>Wednesday</td>
+            <td><a href="booking-details.html?day=Wednesday&time=10:00" id="count_Wednesday_1000">0</a></td>
+            <td><a href="booking-details.html?day=Wednesday&time=11:00" id="count_Wednesday_1100">0</a></td>
+            <td><a href="booking-details.html?day=Wednesday&time=12:00" id="count_Wednesday_1200">0</a></td>
+            <td><a href="booking-details.html?day=Wednesday&time=13:00" id="count_Wednesday_1300">0</a></td>
+            <td><a href="booking-details.html?day=Wednesday&time=14:00" id="count_Wednesday_1400">0</a></td>
+            <td><a href="booking-details.html?day=Wednesday&time=15:00" id="count_Wednesday_1500">0</a></td>
+            <td><a href="booking-details.html?day=Wednesday&time=16:00" id="count_Wednesday_1600">0</a></td>
+            <td><a href="booking-details.html?day=Wednesday&time=17:00" id="count_Wednesday_1700">0</a></td>
+            <td><a href="booking-details.html?day=Wednesday&time=18:00" id="count_Wednesday_1800">0</a></td>
+            <td><a href="booking-details.html?day=Wednesday&time=19:00" id="count_Wednesday_1900">0</a></td>
+            <td><a href="booking-details.html?day=Wednesday&time=20:00" id="count_Wednesday_2000">0</a></td>
+            <td><a href="booking-details.html?day=Wednesday&time=21:00" id="count_Wednesday_2100">0</a></td>
+        </tr>
+        <tr>
+            <td>Thursday</td>
+            <td><a href="booking-details.html?day=Thursday&time=10:00" id="count_Thursday_1000">0</a></td>
+            <td><a href="booking-details.html?day=Thursday&time=11:00" id="count_Thursday_1100">0</a></td>
+            <td><a href="booking-details.html?day=Thursday&time=12:00" id="count_Thursday_1200">0</a></td>
+            <td><a href="booking-details.html?day=Thursday&time=13:00" id="count_Thursday_1300">0</a></td>
+            <td><a href="booking-details.html?day=Thursday&time=14:00" id="count_Thursday_1400">0</a></td>
+            <td><a href="booking-details.html?day=Thursday&time=15:00" id="count_Thursday_1500">0</a></td>
+            <td><a href="booking-details.html?day=Thursday&time=16:00" id="count_Thursday_1600">0</a></td>
+            <td><a href="booking-details.html?day=Thursday&time=17:00" id="count_Thursday_1700">0</a></td>
+            <td><a href="booking-details.html?day=Thursday&time=18:00" id="count_Thursday_1800">0</a></td>
+            <td><a href="booking-details.html?day=Thursday&time=19:00" id="count_Thursday_1900">0</a></td>
+            <td><a href="booking-details.html?day=Thursday&time=20:00" id="count_Thursday_2000">0</a></td>
+            <td><a href="booking-details.html?day=Thursday&time=21:00" id="count_Thursday_2100">0</a></td>
+        </tr>
+        <tr>
+            <td>Friday</td>
+            <td><a href="booking-details.html?day=Friday&time=10:00" id="count_Friday_1000">0</a></td>
+            <td><a href="booking-details.html?day=Friday&time=11:00" id="count_Friday_1100">0</a></td>
+            <td><a href="booking-details.html?day=Friday&time=12:00" id="count_Friday_1200">0</a></td>
+            <td><a href="booking-details.html?day=Friday&time=13:00" id="count_Friday_1300">0</a></td>
+            <td><a href="booking-details.html?day=Friday&time=14:00" id="count_Friday_1400">0</a></td>
+            <td><a href="booking-details.html?day=Friday&time=15:00" id="count_Friday_1500">0</a></td>
+            <td><a href="booking-details.html?day=Friday&time=16:00" id="count_Friday_1600">0</a></td>
+            <td><a href="booking-details.html?day=Friday&time=17:00" id="count_Friday_1700">0</a></td>
+            <td><a href="booking-details.html?day=Friday&time=18:00" id="count_Friday_1800">0</a></td>
+            <td><a href="booking-details.html?day=Friday&time=19:00" id="count_Friday_1900">0</a></td>
+            <td><a href="booking-details.html?day=Friday&time=20:00" id="count_Friday_2000">0</a></td>
+            <td><a href="booking-details.html?day=Friday&time=21:00" id="count_Friday_2100">0</a></td>
+        </tr>
+        <tr>
+            <td>Saturday</td>
+            <td><a href="booking-details.html?day=Saturday&time=10:00" id="count_Saturday_1000">0</a></td>
+            <td><a href="booking-details.html?day=Saturday&time=11:00" id="count_Saturday_1100">0</a></td>
+            <td><a href="booking-details.html?day=Saturday&time=12:00" id="count_Saturday_1200">0</a></td>
+            <td><a href="booking-details.html?day=Saturday&time=13:00" id="count_Saturday_1300">0</a></td>
+            <td><a href="booking-details.html?day=Saturday&time=14:00" id="count_Saturday_1400">0</a></td>
+            <td><a href="booking-details.html?day=Saturday&time=15:00" id="count_Saturday_1500">0</a></td>
+            <td><a href="booking-details.html?day=Saturday&time=16:00" id="count_Saturday_1600">0</a></td>
+            <td><a href="booking-details.html?day=Saturday&time=17:00" id="count_Saturday_1700">0</a></td>
+            <td><a href="booking-details.html?day=Saturday&time=18:00" id="count_Saturday_1800">0</a></td>
+            <td><a href="booking-details.html?day=Saturday&time=19:00" id="count_Saturday_1900">0</a></td>
+            <td><a href="booking-details.html?day=Saturday&time=20:00" id="count_Saturday_2000">0</a></td>
+            <td><a href="booking-details.html?day=Saturday&time=21:00" id="count_Saturday_2100">0</a></td>
+        </tr>
+        <tr>
+            <td>Sunday</td>
+            <td><a href="booking-details.html?day=Sunday&time=10:00" id="count_Sunday_1000">0</a></td>
+            <td><a href="booking-details.html?day=Sunday&time=11:00" id="count_Sunday_1100">0</a></td>
+            <td><a href="booking-details.html?day=Sunday&time=12:00" id="count_Sunday_1200">0</a></td>
+            <td><a href="booking-details.html?day=Sunday&time=13:00" id="count_Sunday_1300">0</a></td>
+            <td><a href="booking-details.html?day=Sunday&time=14:00" id="count_Sunday_1400">0</a></td>
+            <td><a href="booking-details.html?day=Sunday&time=15:00" id="count_Sunday_1500">0</a></td>
+            <td><a href="booking-details.html?day=Sunday&time=16:00" id="count_Sunday_1600">0</a></td>
+            <td><a href="booking-details.html?day=Sunday&time=17:00" id="count_Sunday_1700">0</a></td>
+            <td><a href="booking-details.html?day=Sunday&time=18:00" id="count_Sunday_1800">0</a></td>
+            <td><a href="booking-details.html?day=Sunday&time=19:00" id="count_Sunday_1900">0</a></td>
+            <td><a href="booking-details.html?day=Sunday&time=20:00" id="count_Sunday_2000">0</a></td>
+            <td><a href="booking-details.html?day=Sunday&time=21:00" id="count_Sunday_2100">0</a></td>
+        </tr>
+    </table>
+
+    <hr />
+
+    <footer>
+        <p style="font-size: 15px">
+            Copyright &copy; 2024 Musang King Restaurant IT Department
+        </p>
+    </footer>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>Profile</h2>
+            <a href="#" class="Login-button">Login</a>
+        </div>
+    </div>
+</body>
+</html>
