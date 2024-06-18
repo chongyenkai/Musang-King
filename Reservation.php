@@ -9,6 +9,7 @@ class Reservation extends CI_Controller {
         $this->load->model('swe/Reservation_m');
         $this->load->library('email');
         $this->load->library('session');
+        $this->load->library('form_validation');
         
         // Configure email
         $config['protocol'] = 'smtp';
@@ -29,36 +30,67 @@ class Reservation extends CI_Controller {
         $this->load->view('swe/home_v');
     }
 
-    // Select table page
-    function table() {
-        // Check if the user is logged in
-        if (!$this->session->userdata('login_status')) {
+    // Booking form page
+    function booking() {
+        // Check if the user is logged in, and make sure it is customer
+        if (!$this->session->userdata('login_status') || $this->session->userdata('role') != 'customer') {
             redirect('swe/login');
         }
 
-        $data['tables'] = $this->Table_m->get_tables();
-        $this->load->view('swe/table_selection_v', $data);
+        $this->load->view('swe/reservation_page_v');
     }
 
-    // Booking form page
-    function booking($table_id) {
-        // Check if the user is logged in
-        if (!$this->session->userdata('login_status')) {
+    // Handle form submission and display the table selection page
+    public function process_booking() {
+        // Check if the user is logged in and is a customer
+        if (!$this->session->userdata('login_status') || $this->session->userdata('role') != 'customer') {
             redirect('swe/login');
         }
-
-        $data['table_id'] = $table_id;  // Pass table_id to the view
-        $this->load->view('swe/reservation_page_v', $data);
+    
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // If the form is submitted
+            $name = $this->input->post('name');
+            $email = $this->input->post('email');
+            $phone = $this->input->post('phone');
+            $date = $this->input->post('date');
+            $time = $this->input->post('time');
+            $package = $this->input->post('package');
+            $num_table = $this->input->post('num_table');
+    
+            $data['name'] = $name;
+            $data['email'] = $email;
+            $data['phone'] = $phone;
+            $data['date'] = $date;
+            $data['time'] = $time;
+            $data['package'] = $package;
+            $data['num_table'] = $num_table;
+    
+            // Check available tables
+            $available_data = array();
+            for ($i = 1; $i <= 17; $i++) {
+                $availability = $this->Reservation_m->check_availability($i, $date, $time);
+                if ($availability == 'available') {
+                    $available_data[] = $i;
+                }
+            }
+            $data['available_data'] = $available_data;
+    
+            // Load the table selection view with available tables
+            $this->load->view('swe/table_selection_v', $data);
+        } else {
+            // If the form is not submitted, load the reservation form view
+            $this->load->view('swe/reservation_form_v');
+        }
     }
 
     // Review booking
     function review_booking() {
-        // Check if the user is logged in
-        if (!$this->session->userdata('login_status')) {
+        // Check if the user is logged in, and make sure it is customer
+        if (!$this->session->userdata('login_status') || $this->session->userdata('role') != 'customer') {
             redirect('swe/login');
         }
 
-        $table_id = $this->input->post('table_id');
+        $tables = $this->input->post('tables');
         $name = $this->input->post('name');
         $email = $this->input->post('email');
         $phone = $this->input->post('phone');
@@ -67,11 +99,8 @@ class Reservation extends CI_Controller {
         $time = $this->input->post('time');
         $table_no = $this->input->post('num_table');
 
-        // Combine date and time into a single string
-        $booking_datetime = $date . ' ' . $time;
-
         $data = array(
-            'table_id' => $table_id,
+            'tables' => $tables,
             'name' => $name,
             'email' => $email,
             'phone' => $phone,
@@ -81,19 +110,16 @@ class Reservation extends CI_Controller {
             'time' => $time
         );
 
-        $data['table'] = $this->Table_m->get_tables_by_id($table_id);
         $this->load->view('swe/review_reservation_v', $data);
     }
 
-    // Submit booking form
     function confirm_booking() {
-        // Check if the user is logged in
-        if (!$this->session->userdata('login_status')) {
+        // Check if the user is logged in, and make sure it is customer
+        if (!$this->session->userdata('login_status') || $this->session->userdata('role') != 'customer') {
             redirect('swe/login');
         }
-
-        $user_id = $this->input->post('user_id');
-        $table_id = $this->input->post('table_id');
+    
+        $user_id = $this->session->userdata('id');
         $name = $this->input->post('name');
         $email = $this->input->post('email');
         $phone = $this->input->post('phone');
@@ -101,55 +127,45 @@ class Reservation extends CI_Controller {
         $package = $this->input->post('package');
         $time = $this->input->post('time');
         $table_no = $this->input->post('num_table');
-
-        $user_id = $this->session->userdata('id');
-
-        $data = array(
+        $tables = $this->input->post('tables'); // Array of selected table IDs
+    
+        // Ensure tables are booked as unavailable
+        foreach ($tables as $table_id) {
+            $table_data = array(
+                'table_id' => $table_id,
+                'date' => $date,
+                'time' => $time,
+                'status' => 'unavailable'
+            );
+            $this->Reservation_m->reserve_table($table_data);
+        }
+    
+        // Convert table IDs array to a comma-separated string
+        $table_id_str = implode(',', $tables);
+    
+        $reservation_data = array(
             'user_id' => $user_id,
-            'table_id' => $table_id,
+            'table_id' => $table_id_str, // Use joined table IDs
             'name' => $name,
             'email' => $email,
             'phone' => $phone,
             'date' => $date,
             'time' => $time,
             'package' => $package,
-            'table_no' => $table_no,
+            'table_no' => count($tables), // Count of tables booked
             'status' => 'booked'
         );
-
-        $reservation_id = $this->Reservation_m->create_reservation($data);
-        $this->Table_m->update_status($table_id, 'unavailable');
-
-        // Send email
-        $this->send_email($email, $name, $reservation_id, $time);
-
+    
+        $reservation_id = $this->Reservation_m->create_reservation($reservation_data);
+    
         redirect('swe/reservation/confirmation/' . $reservation_id);
     }
-
-    private function send_email($email, $name, $reservation_id, $booking_datetime) {
-        $this->email->from('yenkaichong1333@gmail.com', 'Musang King Restaurant');
-        $this->email->to($email); // Send to the customer's email
-
-        $subject = 'Reservation Confirmation';
-        $message = "Dear $name,<br><br>
-                    Your reservation (ID: $reservation_id) has been confirmed.<br>
-                    Reservation Date and Time: $booking_datetime<br><br>
-                    Thank you!";
-
-        $this->email->subject($subject);
-        $this->email->message($message);
-
-        if ($this->email->send()) {
-            log_message('info', 'Confirmation email sent to ' . $email);
-        } else {
-            log_message('error', 'Failed to send confirmation email to ' . $email);
-        }
-    }
+    
 
     //confirmation page
     function confirmation($reservation_id) {
-        // Check if the user is logged in
-        if (!$this->session->userdata('login_status')) {
+        // Check if the user is logged in, and make sure it is customer
+        if (!$this->session->userdata('login_status') || $this->session->userdata('role') != 'customer') {
             redirect('swe/login');
         }
 
@@ -159,8 +175,8 @@ class Reservation extends CI_Controller {
 
     //schedule page
     function schedule() {
-        // Check if the user is logged in
-        if (!$this->session->userdata('login_status')) {
+        // Check if the user is logged in, and make sure it is customer
+        if (!$this->session->userdata('login_status') || $this->session->userdata('role') != 'customer') {
             redirect('swe/login');
         }
 
@@ -187,8 +203,8 @@ class Reservation extends CI_Controller {
 
     //booking history page
     function booking_history() {
-        // Check if the user is logged in
-        if (!$this->session->userdata('login_status')) {
+        // Check if the user is logged in, and make sure it is customer
+        if (!$this->session->userdata('login_status') || $this->session->userdata('role') != 'customer') {
             redirect('swe/login');
         }
 
@@ -238,6 +254,46 @@ class Reservation extends CI_Controller {
         } else {
             echo "Failed to delete!";
         }
+    }
+
+    function feedback() {
+        //retrieve the session
+        $user_id = $this->session->userdata('id');
+
+        $data = array(
+            'name' => '',
+            'email' => '',
+            'feedback' => ''
+        );
+
+        if ($this->input->post()) {
+            $this->form_validation->set_rules('name', 'Name', 'required');
+            $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+            $this->form_validation->set_rules('feedback', 'Feedback', 'required');
+
+            if ($this->form_validation->run() == TRUE) {
+                $data = array(
+                    'name' => $this->input->post('name'),
+                    'email' => $this->input->post('email'),
+                    'feedback' => $this->input->post('feedback')
+                );
+
+                $feedback = $this->Reservation_m->feedback($data);
+
+                if ($feedback) {
+                    $this->session->set_flashdata('success', 'Feedback submitted successfully');
+                } else {
+                    $this->session->set_flashdata('failed', 'Feedback submit error');
+                }
+
+                redirect('swe/reservation/feedback');
+            } else {
+                $data['name'] = $this->input->post('name');
+                $data['email'] = $this->input->post('email');
+                $data['feedback'] = $this->input->post('feedback');
+            }
+        }
+        $this->load->view('swe/feedback_v', $data);
     }
 }
 ?>
